@@ -9,20 +9,20 @@ import java.util.List;
 
 public class MonthlyBilling {
     public static void main(String[] args) {
-        String path = "C:\\Users\\Hugo Diniz\\Documents\\desafio-estagio\\desafios\\src\\main\\java\\br\\edu\\ifpb\\eda\\questoes\\questao03\\example.json";
+        String path = "dados.json"; // Colocar o absolute path
         JsonMapper jsonMapper = new JsonMapper();
 
         try {
             List<DailyBilling> invoicing = jsonMapper.readValue(new File(path), new TypeReference<List<DailyBilling>>() {
             });
 
-            double maxValue = invoicing.get(0).getValue();
-            double minValue = invoicing.get(0).getValue();
+            double maxValue = invoicing.get(0).getValor();
+            double minValue = invoicing.get(0).getValor();
             double sum = 0;
             int daysWithInvoicing = 0;
 
             for (DailyBilling day : invoicing) {
-                double value = day.getValue();
+                double value = day.getValor();
                 if (value > 0) {
                     if (value < minValue) {
                         minValue = value;
@@ -39,7 +39,7 @@ public class MonthlyBilling {
             int aboveAverageDays = 0;
 
             for (DailyBilling day : invoicing) {
-                if (day.getValue() > average) {
+                if (day.getValor() > average) {
                     aboveAverageDays++;
                 }
             }

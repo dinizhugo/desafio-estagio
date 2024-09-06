@@ -1,22 +1,22 @@
 package br.edu.ifpb.eda.questoes.questao03;
 
 public class DailyBilling {
-    private int day;
-    private double value;
+    private int dia;
+    private double valor;
 
-    public int getDay() {
-        return day;
+    public int getDia() {
+        return dia;
     }
 
-    public void setDay(int day) {
-        this.day = day;
+    public void setDia(int dia) {
+        this.dia = dia;
     }
 
-    public double getValue() {
-        return value;
+    public double getValor() {
+        return valor;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 }
